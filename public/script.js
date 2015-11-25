@@ -14,6 +14,16 @@ var sending = function sendFile(){
 
 	reader.readAsText(selectFile);
  }
+function askACK(){
+	$.ajax({
+		type:"GET",
+		url: "/ack",
+		dataType:"json",
+		success: function (msg){
+			console.log(msg);
+		}
+	});
+}
 function sendpost(){
 	console.log(reader.result);
 	thedata = reader.result; 

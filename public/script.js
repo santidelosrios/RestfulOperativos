@@ -21,6 +21,10 @@ function askACK(){
 		dataType:"json",
 		success: function (msg){
 			console.log(msg);
+			var mensaje = "archivos ejectuados: ";
+			for(var i=0;i<msg.length;i++){
+				mensaje+=msg[i].name + " ";
+			}
 		}
 	});
 }
@@ -39,6 +43,7 @@ function sendpost(){
            success: function (msg) {
                if (msg) {
                    console.log("Somebody" + name + " was added in list !");
+                 
                    //location.reload(true);
                } else {
                    alert("Cannot add to list !");
